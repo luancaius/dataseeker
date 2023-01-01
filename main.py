@@ -3,8 +3,7 @@ import requests
 import redis
 from src.handlers.cache_handler import CacheHandler
 import json
-import pymongo
-
+from src.util.mongodb import MongoDb
 
 def read_request_from_file(filename):
     return 'https://www.boredapi.com/api/activity?participants=4'
@@ -31,8 +30,14 @@ def convert_to_dict(input):
         pass
 
 def save_to_database(data):
-    pass
-
+    print('saving to database')
+    mongoclient = MongoDb.get_client()
+    db = mongoclient.test
+    print('db', db)
+    collection = db.first
+    print('collection', collection)
+    collection.insert_one(data)
+    print('saved')
 
 if __name__ == "__main__":
     print('starting dataseeker')
