@@ -1,5 +1,5 @@
 
-def print(value):
+def show_value(value):
     print(value)
 
 def sum(a,b):
