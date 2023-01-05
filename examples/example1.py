@@ -1,3 +1,5 @@
-from dataseeker_luanramos import main as test_main
+from dataseeker_luanramos import main as test
 
-test_main.print("testing")
+test.show_value("aew")
+
+
