@@ -1,7 +1,7 @@
 from enum import Enum
 
 
-class RequestTypeEnum(Enum):
+class TypeRequestEnum(Enum):
     REST = 0
     SOAP = 1
     GRPC = 2
@@ -9,10 +9,10 @@ class RequestTypeEnum(Enum):
 
 
 class RequestEntity:
-    def __init__(self, url: str, request_type: RequestTypeEnum, operation: str,  headers: dict, body: str):
+    def __init__(self, url: str, type_request: TypeRequestEnum, operation: str,  headers: dict, body: str = None):
         self.url = url
-        self.request_type = request_type
+        self.type_request = type_request
         self.operation = operation
-        self.header = headers
+        self.headers = headers
         self.body = body
 
